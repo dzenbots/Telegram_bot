@@ -1,6 +1,3 @@
-import os
-
-BOT_TOKEN = os.environ.get('BOT_TOKEN')
-BOT_PROXY = os.environ.get('PROXY')
+from settings import BOT_TOKEN, BOT_PROXY
 
 print(BOT_TOKEN, BOT_PROXY)
