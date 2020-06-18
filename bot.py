@@ -52,7 +52,7 @@ def get_text_message(message: Message):
                          text=f'И ты утверждаешь, что тебя зовут {message.text}')
         bot.send_message(chat_id=user.telegram_id,
                          text='Все верно?', reply_markup=register_keyboards)
-        user.update(name=message.text).execute()
+        User.update(name=message.text).where(User.telegram_id == user_id).execute()
 
 
 @bot.callback_query_handler(func=lambda call: call.data == register_callbacks.get('OK'))
